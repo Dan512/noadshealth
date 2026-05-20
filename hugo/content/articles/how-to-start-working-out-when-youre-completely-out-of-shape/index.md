@@ -35,7 +35,7 @@ If you do not have dumbbells, most of this still works with bodyweight or bands.
 
 You do not need to track every gram of food from day one. You should pay attention to protein.
 
-A good starting target is about 0.7 grams of protein per pound of bodyweight per day. If you weigh 180 pounds, that is about 125 grams per day. Three or four meals with 30–35 grams each gets you close without much math.
+A good starting target is about 0.7 grams of protein per pound of bodyweight per day. If you weigh 180 pounds, that is about 125 grams per day. Three or four meals with 30–35 grams each gets you close without much math. An example of a good source of protein is skinless chicken breast (about ~20 grams of protein per 100 calories) and seitan (vegetarian option, about the same amount of protein per 100 calories).
 
 This matters because training creates stress your body has to repair from. Low protein makes recovery harder. You may feel more sore, recover slower, and see less change from the same workouts.
 
