@@ -161,9 +161,12 @@ button { font: inherit; cursor: pointer; }
 /* Sections */
 .section-h {
   font-family: var(--font-serif);
-  font-size: 1.6rem;
+  font-style: italic;
+  font-weight: 400;
+  font-size: 1.05rem;
+  color: var(--text-muted);
   margin: 0 0 var(--space-5);
-  letter-spacing: -0.01em;
+  letter-spacing: 0.01em;
 }
 .recent-articles, .calculators-promo {
   margin-bottom: var(--space-8);
@@ -321,12 +324,17 @@ a.tag:focus-visible {
 }
 .article-body li { margin-bottom: var(--space-2); }
 .article-body blockquote {
-  border-left: 3px solid var(--accent);
-  margin: var(--space-5) 0;
-  padding: var(--space-2) var(--space-5);
-  color: var(--text-muted);
+  margin: var(--space-6) var(--space-5);
+  padding: 0;
+  border: none;
+  font-family: var(--font-serif);
   font-style: italic;
+  font-size: 1.125rem;
+  line-height: 1.55;
+  color: var(--text);
 }
+.article-body blockquote p { margin: 0 0 var(--space-3); }
+.article-body blockquote p:last-child { margin-bottom: 0; }
 .article-body strong { color: var(--text); }
 .article-body code {
   font-family: ui-monospace, "SF Mono", Menlo, Consolas, monospace;
@@ -577,6 +585,10 @@ a.tag:focus-visible {
   font-size: 2.5rem;
   font-weight: 700;
   color: var(--accent);
+}
+.calc-result-value #bmi-result.is-empty {
+  color: var(--text-muted);
+  font-weight: 400;
 }
 .calc-result-category {
   margin: 0;

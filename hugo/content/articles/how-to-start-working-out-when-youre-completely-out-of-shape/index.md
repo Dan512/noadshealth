@@ -46,7 +46,7 @@ That is progressive overload at its simplest: do a little more than you did befo
 
 Do not use soreness as your scorecard. You can train well and barely feel it the next day. You can also use bad form, do too much, and feel wrecked. Soreness mostly tracks what is new, not what is working.
 
-{{< figure src="workout-calendar-one-week.jpg" alt="A one week workout calendar" caption="A basic workout calendar, doesn't get any easier than this" >}}
+{{< figure src="workout-calendar-one-week.webp" alt="A one week workout calendar" caption="A basic workout calendar, doesn't get any easier than this" >}}
 
 The non-obvious take: running should not be your first priority if you are starting from nothing. Walking is the better entry point for most people. Start with 20-minute walks at a pace that makes you slightly warm, then add time before you add speed.
 

@@ -87,28 +87,22 @@
     const hasH = hRaw !== '' && isFinite(h) && h > 0;
     const hasW = wRaw !== '' && isFinite(w) && w > 0;
 
-    if (!hasH && !hasW) {
+    function showEmpty(msg) {
       resultEl.textContent = '—';
-      categoryEl.textContent = MESSAGES.empty;
-      return;
+      resultEl.classList.add('is-empty');
+      categoryEl.textContent = msg;
     }
-    if (!hasH) {
-      resultEl.textContent = '—';
-      categoryEl.textContent = MESSAGES.needHeight;
-      return;
-    }
-    if (!hasW) {
-      resultEl.textContent = '—';
-      categoryEl.textContent = MESSAGES.needWeight;
-      return;
-    }
+
+    if (!hasH && !hasW) { showEmpty(MESSAGES.empty); return; }
+    if (!hasH)          { showEmpty(MESSAGES.needHeight); return; }
+    if (!hasW)          { showEmpty(MESSAGES.needWeight); return; }
 
     const bmi = calcBMI(h, w, currentUnit());
     if (bmi === null || bmi < 10 || bmi > 80) {
-      resultEl.textContent = '—';
-      categoryEl.textContent = MESSAGES.implausible;
+      showEmpty(MESSAGES.implausible);
       return;
     }
+    resultEl.classList.remove('is-empty');
     resultEl.textContent = bmi.toFixed(1);
     categoryEl.textContent = categorize(bmi);
   }
