@@ -21,12 +21,13 @@ That may feel too easy. That is the point. You are trying to make training norma
 You do not need a long exercise menu. Start with movements that cover the major patterns without much technical overhead.
 
 * **Goblet squat:** Hold a dumbbell or water jug at your chest, squat down, and keep your heels on the floor. This is easier to learn than a barbell squat because you do not need to figure out bar position.
+{{< image src="goblet-squat-example.webp" alt="A woman performing a goblet squat with a dumbbell" caption="Goblet Squat Example" >}}
 * **Push-up:** Put your hands just outside shoulder width, lower your chest toward the floor, and keep your hips level. Use your knees or an incline if needed.
-* **Glute bridge:** Lie on your back with your feet flat, then drive your hips up. This is simple, useful, and hard to mess up. Lift your butt off the ground and hold it for 20 seconds, and repeat a few times.
+* **Glute bridge:** Lie on your back with your feet flat, then drive your hips up. This is simple, useful, and hard to mess up. Lift your butt off the ground and hold it for 5-10 seconds (building up to 30 seconds over 2-3 weeks), and repeat for 8-10 reps.
 * **Dumbbell row:** Brace one hand on a bench or chair, then pull a dumbbell from below your shoulder toward your hip.
-* **Dead bug:** Lie on your back, press your lower back into the floor, and slowly extend the opposite arm and leg. The name is bad. The exercise is useful.
+{{< image src="dumbbell-row-example.webp" alt="A man performing a dumbbell row on a bench" caption="Dumbbell Row Example" >}}
+* **Dead bug:** Lie on your back, press your lower back into the floor, and slowly extend the opposite arm and leg. Weird name for an exercise, but still good
 
-{{< figure src="goblet-squat-example-shirish4ss.webp" alt="A woman performing a goblet squat with a dumbbell" caption="Goblet Squat Example" >}}
 
 If you do not have dumbbells, most of this still works with bodyweight or bands. A set of resistance bands with a door anchor can cover rows and other pulling movements if you are not ready for a gym.
 
@@ -46,7 +47,7 @@ That is progressive overload at its simplest: do a little more than you did befo
 
 Do not use soreness as your scorecard. You can train well and barely feel it the next day. You can also use bad form, do too much, and feel wrecked. Soreness mostly tracks what is new, not what is working.
 
-{{< figure src="workout-calendar-one-week.webp" alt="A one week workout calendar" caption="A basic workout calendar, doesn't get any easier than this" >}}
+{{< image src="workout-calendar-one-week.webp" alt="A one week workout calendar" caption="A basic workout calendar, doesn't get any easier than this" >}}
 
 The non-obvious take: running should not be your first priority if you are starting from nothing. Walking is the better entry point for most people. Start with 20-minute walks at a pace that makes you slightly warm, then add time before you add speed.
 

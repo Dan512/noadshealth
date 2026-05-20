@@ -118,20 +118,22 @@ button { font: inherit; cursor: pointer; }
 .site-title-suffix { color: var(--text); }
 .site-nav {
   display: flex;
-  gap: var(--space-5);
+  gap: var(--space-3);
 }
 .site-nav a {
   color: var(--text);
   text-decoration: none;
   font-size: 0.95rem;
-  padding: var(--space-2) 0;
+  padding: 0.625rem var(--space-3);
   border-bottom: 2px solid transparent;
 }
 .site-nav a:hover,
-.site-nav a:focus-visible {
+.site-nav a:focus-visible,
+.site-nav a[aria-current="page"] {
   color: var(--accent);
   border-bottom-color: var(--accent);
 }
+.site-nav a[aria-current="page"] { font-weight: 600; }
 
 /* Main */
 .main {
@@ -179,7 +181,8 @@ button { font: inherit; cursor: pointer; }
   padding: var(--space-2) 0;
   border-bottom: 1px solid currentColor;
 }
-.cta-link:hover { color: var(--link-hover); }
+.cta-link:hover,
+.cta-link:focus-visible { color: var(--link-hover); outline: none; }
 
 /* Card grid */
 .card-grid {
@@ -656,7 +659,7 @@ a.tag:focus-visible {
   background: var(--support-bg);
   color: var(--support-text);
   text-decoration: none;
-  padding: 0.6rem 1rem;
+  padding: 0.75rem 1.1rem;
   border-radius: var(--radius-pill);
   font-size: 0.85rem;
   font-weight: 600;

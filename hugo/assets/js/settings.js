@@ -111,7 +111,9 @@
     document.addEventListener('click', function (e) {
       if (popover.hidden) return;
       if (popover.contains(e.target) || trigger.contains(e.target)) return;
+      const wasFocusInside = popover.contains(document.activeElement);
       close();
+      if (wasFocusInside) trigger.focus();
     });
 
     document.addEventListener('keydown', function (e) {
