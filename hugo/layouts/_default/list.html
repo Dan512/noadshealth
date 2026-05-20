@@ -5,13 +5,26 @@
   {{ with .Content }}<div class="page-intro">{{ . }}</div>{{ end }}
 </header>
 
+{{- if and (eq .Section "articles") .Site.Taxonomies.tags -}}
+<nav class="tag-cloud" aria-label="Browse articles by tag">
+  {{- range $tag, $pages := .Site.Taxonomies.tags -}}
+    {{- if gt (len $pages) 0 -}}
+  <a href="{{ "/tags/" | relURL }}{{ $tag | urlize }}/" class="tag-cloud-item">
+    <span class="tag-cloud-name">{{ $tag }}</span>
+    <span class="tag-cloud-count">{{ len $pages }}</span>
+  </a>
+    {{- end -}}
+  {{- end -}}
+</nav>
+{{- end }}
+
 {{ $pages := .RegularPages }}
 {{ if $pages }}
 <ul class="card-grid">
   {{ range $pages }}
   <li class="card">
     <a href="{{ .Permalink }}" class="card-link">
-      <h3 class="card-title">{{ .Title }}</h3>
+      <h2 class="card-title">{{ .Title }}</h2>
       <p class="card-desc">{{ .Description | default .Summary | truncate 160 }}</p>
       <time class="card-date" datetime="{{ .Date.Format "2006-01-02" }}">{{ .Date.Format "Jan 2, 2006" }}</time>
     </a>

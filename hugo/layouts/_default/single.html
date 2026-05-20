@@ -17,6 +17,42 @@
     {{ .Content }}
   </div>
 
+  {{- /* Read next: related-by-tag, fall back to most-recent. Excludes self. Limits to 3. */ -}}
+  {{- $current := . -}}
+  {{- $myTags := .Params.tags | default (slice) -}}
+  {{- $related := slice -}}
+  {{- range where .Site.RegularPages "Section" "articles" -}}
+    {{- if ne .Permalink $current.Permalink -}}
+      {{- if gt (len (intersect (.Params.tags | default (slice)) $myTags)) 0 -}}
+        {{- $related = $related | append . -}}
+      {{- end -}}
+    {{- end -}}
+  {{- end -}}
+  {{- if lt (len $related) 3 -}}
+    {{- range where .Site.RegularPages "Section" "articles" -}}
+      {{- if and (ne .Permalink $current.Permalink) (not (in $related .)) -}}
+        {{- $related = $related | append . -}}
+      {{- end -}}
+    {{- end -}}
+  {{- end -}}
+  {{- $related = first 3 $related -}}
+
+  {{ if $related }}
+  <aside class="read-next" aria-labelledby="read-next-title">
+    <h2 id="read-next-title" class="read-next-title">Read next</h2>
+    <ul class="read-next-list">
+      {{ range $related }}
+      <li class="read-next-item">
+        <a href="{{ .Permalink }}" class="read-next-link">
+          <span class="read-next-headline">{{ .Title }}</span>
+          {{ with .Description }}<span class="read-next-desc">{{ . | truncate 130 }}</span>{{ end }}
+        </a>
+      </li>
+      {{ end }}
+    </ul>
+  </aside>
+  {{ end }}
+
   <footer class="article-footer">
     <p>
       <a href="{{ "/articles/" | relURL }}">&larr; All articles</a>
