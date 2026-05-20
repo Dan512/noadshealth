@@ -13,6 +13,13 @@
   const resultEl = document.getElementById('bmi-result');
   const categoryEl = document.getElementById('bmi-category');
 
+  const MESSAGES = {
+    empty: 'Enter your height and weight to see your BMI.',
+    needHeight: 'Add your height.',
+    needWeight: 'Add your weight.',
+    implausible: "That can't be right — did you mix metric and imperial?"
+  };
+
   function currentUnit() {
     const checked = form.querySelector('input[name="unit"]:checked');
     return checked ? checked.value : 'metric';
@@ -25,11 +32,33 @@
       weightLabel.textContent = 'Weight (kg)';
       heightInput.placeholder = 'e.g. 175';
       weightInput.placeholder = 'e.g. 70';
+      heightInput.min = 50;  heightInput.max = 250;
+      weightInput.min = 20;  weightInput.max = 300;
     } else {
       heightLabel.textContent = 'Height (in)';
       weightLabel.textContent = 'Weight (lbs)';
       heightInput.placeholder = 'e.g. 70';
       weightInput.placeholder = 'e.g. 155';
+      heightInput.min = 20;  heightInput.max = 100;
+      weightInput.min = 40;  weightInput.max = 700;
+    }
+  }
+
+  function convertValues(fromUnit, toUnit) {
+    if (fromUnit === toUnit) return;
+    const h = parseFloat(heightInput.value);
+    const w = parseFloat(weightInput.value);
+    if (isFinite(h) && h > 0) {
+      heightInput.value = (fromUnit === 'metric'
+        ? (h / 2.54)        // cm → in
+        : (h * 2.54)        // in → cm
+      ).toFixed(1);
+    }
+    if (isFinite(w) && w > 0) {
+      weightInput.value = (fromUnit === 'metric'
+        ? (w * 2.20462)     // kg → lbs
+        : (w / 2.20462)     // lbs → kg
+      ).toFixed(1);
     }
   }
 
@@ -51,20 +80,45 @@
   }
 
   function render() {
-    const h = parseFloat(heightInput.value);
-    const w = parseFloat(weightInput.value);
-    const bmi = calcBMI(h, w, currentUnit());
-    if (bmi === null) {
+    const hRaw = heightInput.value.trim();
+    const wRaw = weightInput.value.trim();
+    const h = parseFloat(hRaw);
+    const w = parseFloat(wRaw);
+    const hasH = hRaw !== '' && isFinite(h) && h > 0;
+    const hasW = wRaw !== '' && isFinite(w) && w > 0;
+
+    if (!hasH && !hasW) {
       resultEl.textContent = '—';
-      categoryEl.textContent = 'Enter your height and weight above';
+      categoryEl.textContent = MESSAGES.empty;
+      return;
+    }
+    if (!hasH) {
+      resultEl.textContent = '—';
+      categoryEl.textContent = MESSAGES.needHeight;
+      return;
+    }
+    if (!hasW) {
+      resultEl.textContent = '—';
+      categoryEl.textContent = MESSAGES.needWeight;
+      return;
+    }
+
+    const bmi = calcBMI(h, w, currentUnit());
+    if (bmi === null || bmi < 10 || bmi > 80) {
+      resultEl.textContent = '—';
+      categoryEl.textContent = MESSAGES.implausible;
       return;
     }
     resultEl.textContent = bmi.toFixed(1);
     categoryEl.textContent = categorize(bmi);
   }
 
+  let lastUnit = currentUnit();
   form.querySelectorAll('input[name="unit"]').forEach(function (el) {
     el.addEventListener('change', function () {
+      const newUnit = currentUnit();
+      convertValues(lastUnit, newUnit);
+      lastUnit = newUnit;
       updateUnitLabels();
       render();
     });

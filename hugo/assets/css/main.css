@@ -224,10 +224,11 @@ button { font: inherit; cursor: pointer; }
   font-size: 0.95rem;
 }
 .card-date {
-  font-size: 0.8rem;
+  font-family: var(--font-serif);
+  font-style: italic;
+  font-size: 0.875rem;
   color: var(--text-muted);
-  text-transform: uppercase;
-  letter-spacing: 0.05em;
+  letter-spacing: 0;
 }
 
 /* Page header (list / about / privacy) */
@@ -280,6 +281,15 @@ button { font: inherit; cursor: pointer; }
   padding: 2px 8px;
   border-radius: var(--radius-pill);
   color: var(--text-muted);
+  text-decoration: none;
+  transition: background 0.15s, color 0.15s, border-color 0.15s;
+}
+a.tag:hover,
+a.tag:focus-visible {
+  background: var(--accent);
+  color: var(--bg);
+  border-color: var(--accent);
+  outline: none;
 }
 .article-lede {
   font-size: 1.15rem;
@@ -324,6 +334,46 @@ button { font: inherit; cursor: pointer; }
   padding: 0.1em 0.35em;
   border-radius: var(--radius-sm);
   font-size: 0.9em;
+}
+
+/* Tables — handbook tabular look: rule lines, no zebra, generous padding */
+.article-body table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: var(--space-6) 0;
+  font-size: 0.95rem;
+  font-variant-numeric: tabular-nums;
+}
+.article-body thead th {
+  font-family: var(--font-serif);
+  font-style: italic;
+  font-weight: 600;
+  font-size: 1rem;
+  text-align: left;
+  padding: var(--space-3) var(--space-4);
+  border-bottom: 2px solid var(--border-strong);
+  color: var(--text);
+  background: transparent;
+}
+.article-body tbody td {
+  padding: var(--space-3) var(--space-4);
+  border-bottom: 1px solid var(--border);
+  vertical-align: top;
+}
+.article-body tbody tr:last-child td {
+  border-bottom: 2px solid var(--border-strong);
+}
+.article-body th:first-child,
+.article-body td:first-child {
+  padding-left: 0;
+}
+.article-body th:last-child,
+.article-body td:last-child {
+  padding-right: 0;
+}
+@media (max-width: 600px) {
+  .article-body table { display: block; overflow-x: auto; }
+  .article-body th, .article-body td { white-space: nowrap; }
 }
 
 /* Figures (images inside articles) */
