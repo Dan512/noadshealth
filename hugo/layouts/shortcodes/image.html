@@ -1,0 +1,60 @@
+{{- /*
+  image shortcode — responsive, lazy, WebP-capable.
+
+  Usage in markdown:
+    {{< image src="starting-position.jpg" alt="Body in plank position, arms straight" >}}
+    {{< image src="bottom-position.jpg" alt="Chest just above the floor" caption="The bottom of the rep — pause for one breath." >}}
+    {{< image src="hero.jpg" alt="..." width="1600" >}}   # cap the largest variant
+
+  Looks for the image as a page resource (i.e. alongside index.md in a page bundle).
+*/ -}}
+
+{{- $src := .Get "src" -}}
+{{- $alt := .Get "alt" | default "" -}}
+{{- $caption := .Get "caption" -}}
+{{- $maxWidth := .Get "width" | default "1200" -}}
+{{- $img := .Page.Resources.GetMatch $src -}}
+
+{{- if not $img -}}
+  {{- errorf "image shortcode: %q not found in page bundle %q. Did you put the file next to index.md?" $src .Page.RelPermalink -}}
+{{- end -}}
+
+{{- $widths := slice 480 800 1200 1600 -}}
+{{- $jpegSrcset := slice -}}
+{{- $webpSrcset := slice -}}
+
+{{- range $widths -}}
+  {{- if le . (int $maxWidth) -}}
+    {{- $w := . -}}
+    {{- if lt $w $img.Width -}}
+      {{- $resized := $img.Resize (printf "%dx q85" $w) -}}
+      {{- $webp := $img.Resize (printf "%dx q80 webp" $w) -}}
+      {{- $jpegSrcset = $jpegSrcset | append (printf "%s %dw" $resized.RelPermalink $w) -}}
+      {{- $webpSrcset = $webpSrcset | append (printf "%s %dw" $webp.RelPermalink $w) -}}
+    {{- end -}}
+  {{- end -}}
+{{- end -}}
+
+{{- $fallback := $img -}}
+{{- if gt $img.Width (int $maxWidth) -}}
+  {{- $fallback = $img.Resize (printf "%sx q85" $maxWidth) -}}
+{{- end -}}
+
+<figure class="article-figure">
+  <picture>
+    {{- with $webpSrcset }}
+    <source type="image/webp" srcset="{{ delimit . ", " }}" sizes="(max-width: 700px) 100vw, 700px">
+    {{- end }}
+    <img
+      src="{{ $fallback.RelPermalink }}"
+      {{- with $jpegSrcset }} srcset="{{ delimit . ", " }}" sizes="(max-width: 700px) 100vw, 700px"{{ end }}
+      width="{{ $fallback.Width }}"
+      height="{{ $fallback.Height }}"
+      loading="lazy"
+      decoding="async"
+      alt="{{ $alt }}">
+  </picture>
+  {{- with $caption }}
+  <figcaption>{{ . | markdownify }}</figcaption>
+  {{- end }}
+</figure>

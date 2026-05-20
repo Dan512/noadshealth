@@ -1,0 +1,20 @@
+<footer class="site-footer">
+  <div class="container footer-inner">
+    <div class="footer-privacy">
+      <h2 class="footer-h">What this site shares</h2>
+      <p>
+        noadshealth runs no ads, sets no analytics, drops no cookies and ships zero third-party scripts.
+        The only outside services touched are <a href="{{ "/privacy/" | relURL }}">listed on the privacy page</a>,
+        and only when you actively click them.
+      </p>
+    </div>
+    <nav class="footer-nav" aria-label="Footer">
+      <a href="{{ "/articles/" | relURL }}">Articles</a>
+      <a href="{{ "/calculators/" | relURL }}">Calculators</a>
+      <a href="{{ "/about/" | relURL }}">About</a>
+      <a href="{{ "/privacy/" | relURL }}">Privacy</a>
+      <a href="{{ "/index.xml" | relURL }}">RSS</a>
+    </nav>
+    <p class="footer-meta">&copy; {{ now.Year }} {{ .Site.Params.author }}. Part of the NoAdsDude family.</p>
+  </div>
+</footer>

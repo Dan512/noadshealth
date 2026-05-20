@@ -1,0 +1,33 @@
+# === Anything Cloudflare doesn't need to build the site ===
+
+# Project docs (kept locally; not for public consumption)
+/article2.md
+/deploy.md
+/article1.md
+
+# Claude Code state, skills, and project config
+.claude/
+
+# Hugo build artifacts — regenerated on every build
+hugo/public/
+hugo/resources/
+hugo/.hugo_build.lock
+
+# Node (future-proofing; no node_modules currently)
+**/node_modules/
+
+# Environment / secrets — never commit these
+.env
+.env.local
+.env.*.local
+
+# OS junk
+.DS_Store
+Thumbs.db
+*.swp
+*.swo
+
+# Editor configs
+.vscode/
+.idea/
+*.code-workspace

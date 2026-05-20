@@ -1,0 +1,22 @@
+{{ define "main" }}
+<header class="page-header">
+  <h1 class="page-title">{{ .Title }}</h1>
+  {{ with .Description }}<p class="page-lede">{{ . }}</p>{{ end }}
+  {{ with .Content }}<div class="page-intro">{{ . }}</div>{{ end }}
+</header>
+
+{{ $pages := .RegularPages }}
+{{ if $pages }}
+<ul class="card-grid">
+  {{ range $pages }}
+  <li class="card">
+    <a href="{{ .Permalink }}" class="card-link">
+      <h3 class="card-title">{{ .Title }}</h3>
+      <p class="card-desc">{{ .Description | default .Summary | truncate 160 }}</p>
+      <time class="card-date" datetime="{{ .Date.Format "2006-01-02" }}">{{ .Date.Format "Jan 2, 2006" }}</time>
+    </a>
+  </li>
+  {{ end }}
+</ul>
+{{ end }}
+{{ end }}

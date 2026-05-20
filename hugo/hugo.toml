@@ -1,0 +1,30 @@
+baseURL = 'https://noadshealth.com/'
+locale = 'en-us'
+title = 'noadshealth'
+enableRobotsTXT = true
+enableGitInfo = false
+
+[params]
+  description = "Honest fitness and health tips. No ads. No tracking. No autoplay."
+  author = "NoAdsDude"
+  kofiUrl = "https://ko-fi.com/noadsdude"
+  ogImage = ""
+
+[markup]
+  [markup.goldmark]
+    [markup.goldmark.renderer]
+      unsafe = false
+
+[outputs]
+  home = ["HTML", "RSS"]
+  section = ["HTML", "RSS"]
+
+[sitemap]
+  changefreq = "weekly"
+  priority = 0.5
+  filename = "sitemap.xml"
+
+[minify]
+  disableHTML = false
+  disableCSS = false
+  disableJS = false

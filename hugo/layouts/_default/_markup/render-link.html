@@ -1,0 +1,4 @@
+{{- $url := .Destination -}}
+{{- $external := or (strings.HasPrefix $url "http://") (strings.HasPrefix $url "https://") -}}
+{{- $affiliate := and $external (or (strings.Contains $url "tag=") (strings.Contains $url "amzn.to")) -}}
+<a href="{{ $url | safeURL }}"{{ if $external }} target="_blank"{{ end }}{{ if $affiliate }} rel="sponsored noopener nofollow"{{ else if $external }} rel="noopener"{{ end }}>{{ .Text | safeHTML }}</a>{{- /* */ -}}

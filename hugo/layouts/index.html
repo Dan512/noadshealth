@@ -1,0 +1,27 @@
+{{ define "main" }}
+<section class="hero">
+  <h1 class="hero-title">Honest fitness and health tips.</h1>
+  <p class="hero-tag">No ads. No tracking. No autoplay. Just clear, practical advice for getting and staying in shape.</p>
+</section>
+
+<section class="recent-articles">
+  <h2 class="section-h">Recent articles</h2>
+  <ul class="card-grid">
+    {{ range first 6 (where .Site.RegularPages "Section" "articles") }}
+    <li class="card">
+      <a href="{{ .Permalink }}" class="card-link">
+        <h3 class="card-title">{{ .Title }}</h3>
+        <p class="card-desc">{{ .Description | default .Summary | truncate 140 }}</p>
+        <time class="card-date" datetime="{{ .Date.Format "2006-01-02" }}">{{ .Date.Format "Jan 2, 2006" }}</time>
+      </a>
+    </li>
+    {{ end }}
+  </ul>
+</section>
+
+<section class="calculators-promo">
+  <h2 class="section-h">Calculators</h2>
+  <p>Simple tools that run entirely in your browser. No data ever leaves your device.</p>
+  <p><a href="{{ "/calculators/" | relURL }}" class="cta-link">See all calculators &rarr;</a></p>
+</section>
+{{ end }}
