@@ -289,6 +289,102 @@ button { font: inherit; cursor: pointer; }
 .article-byline a:focus-visible {
   color: var(--accent);
 }
+
+/* ---- info-btn + popover (used by calc forms) ---- */
+.info-btn {
+  display: inline-block;
+  background: transparent;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-pill);
+  padding: 0 8px;
+  font-size: 0.7rem;
+  line-height: 1.6;
+  color: var(--text-muted);
+  cursor: pointer;
+  margin-left: 6px;
+  vertical-align: baseline;
+}
+.info-btn:hover,
+.info-btn:focus-visible {
+  color: var(--accent);
+  border-color: var(--accent);
+  outline: none;
+}
+
+.info-popover {
+  max-width: 420px;
+  padding: 16px 18px;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  background: var(--bg-elevated);
+  color: var(--text);
+  font-size: 0.95rem;
+  line-height: 1.5;
+  box-shadow: var(--shadow-md);
+}
+.info-popover::backdrop {
+  background: rgba(0, 0, 0, 0.25);
+}
+.info-popover p {
+  margin: 0 0 12px;
+}
+.info-popover-close {
+  background: var(--accent);
+  color: var(--bg);
+  border: none;
+  border-radius: var(--radius-pill);
+  padding: 6px 14px;
+  font-size: 0.85rem;
+  cursor: pointer;
+}
+.info-popover-close:hover,
+.info-popover-close:focus-visible {
+  filter: brightness(1.1);
+  outline: none;
+}
+
+/* Form-hint paragraph inside calc fieldsets */
+.form-hint {
+  font-size: 0.85rem;
+  color: var(--text-muted);
+  margin: 4px 0 10px;
+}
+
+/* Result panel for the TDEE-style stacked rows */
+.calc-result-tdee {
+  display: grid;
+  gap: 8px;
+  font-variant-numeric: tabular-nums;
+}
+.calc-result-tdee .calc-row {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  align-items: baseline;
+  column-gap: 16px;
+}
+.calc-result-tdee .calc-label {
+  color: var(--text-muted);
+}
+.calc-result-tdee .calc-value {
+  font-weight: 600;
+  font-size: 1.1rem;
+}
+.calc-result-tdee .calc-note {
+  grid-column: 1 / -1;
+  text-align: right;
+  font-size: 0.8rem;
+  color: var(--text-muted);
+  margin-top: -4px;
+}
+.calc-result-tdee .calc-result-prompt {
+  margin: 8px 0 0;
+  color: var(--text-muted);
+  font-size: 0.9rem;
+}
+.calc-result-tdee.is-ready .calc-result-prompt {
+  display: none;
+}
+
 .article-tags { display: inline-flex; gap: var(--space-2); }
 .tag {
   font-size: 0.75rem;
@@ -530,7 +626,8 @@ a.tag:focus-visible {
   margin-bottom: var(--space-6);
 }
 .calc-form { margin: 0; }
-.calc-units {
+.calc-units,
+.calc-sex {
   border: none;
   padding: 0;
   margin: 0 0 var(--space-5);
@@ -538,7 +635,8 @@ a.tag:focus-visible {
   flex-wrap: wrap;
   gap: var(--space-4);
 }
-.calc-units legend {
+.calc-units legend,
+.calc-sex legend {
   padding: 0;
   margin: 0 0 var(--space-3);
   font-weight: 600;
@@ -561,7 +659,8 @@ a.tag:focus-visible {
   font-weight: 600;
   font-size: 0.95rem;
 }
-.field input[type="number"] {
+.field input[type="number"],
+.field select {
   width: 100%;
   padding: var(--space-3) var(--space-4);
   font-size: 1.05rem;
@@ -570,9 +669,12 @@ a.tag:focus-visible {
   border-radius: var(--radius-md);
   background: var(--bg);
   color: var(--text);
+}
+.field input[type="number"] {
   -moz-appearance: textfield;
 }
-.field input[type="number"]:focus {
+.field input[type="number"]:focus,
+.field select:focus {
   outline: 2px solid var(--accent);
   outline-offset: 1px;
   border-color: var(--accent);

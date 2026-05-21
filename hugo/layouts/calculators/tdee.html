@@ -1,0 +1,107 @@
+{{ define "main" }}
+<article class="article calc-page">
+  <header class="article-header">
+    <h1 class="article-title">{{ .Title }}</h1>
+    {{ with .Description }}<p class="article-lede">{{ . }}</p>{{ end }}
+  </header>
+
+  <section class="calc">
+    <form id="tdee-form" class="calc-form" autocomplete="off" novalidate>
+      <fieldset class="calc-units">
+        <legend>Units</legend>
+        <label class="radio-label">
+          <input type="radio" name="unit" value="metric" checked>
+          Metric (cm / kg)
+        </label>
+        <label class="radio-label">
+          <input type="radio" name="unit" value="imperial">
+          Imperial (in / lbs)
+        </label>
+      </fieldset>
+
+      <div class="field">
+        <label for="age">Age</label>
+        <input type="number" id="age" inputmode="numeric" min="14" max="100" step="1" placeholder="e.g. 35">
+      </div>
+
+      <fieldset class="calc-sex">
+        <legend>Sex</legend>
+        <p class="form-hint">
+          Used in the Mifflin–St Jeor formula.
+          <button type="button" class="info-btn" popovertarget="sex-note" aria-label="More about the sex field">Note</button>
+        </p>
+        <label class="radio-label">
+          <input type="radio" name="sex" value="male" checked>
+          Male
+        </label>
+        <label class="radio-label">
+          <input type="radio" name="sex" value="female">
+          Female
+        </label>
+      </fieldset>
+
+      <div class="field">
+        <label for="height" id="height-label">Height (cm)</label>
+        <input type="number" id="height" inputmode="decimal" min="0" step="0.1" placeholder="e.g. 175">
+      </div>
+
+      <div class="field">
+        <label for="weight" id="weight-label">Weight (kg)</label>
+        <input type="number" id="weight" inputmode="decimal" min="0" step="0.1" placeholder="e.g. 75">
+      </div>
+
+      <div class="field">
+        <label for="activity">Activity level</label>
+        <select id="activity">
+          <option value="1.2">Sedentary — desk job, almost no exercise (×1.2)</option>
+          <option value="1.375">Lightly active — light exercise 1–3 days/week (×1.375)</option>
+          <option value="1.55" selected>Moderately active — moderate exercise 3–5 days/week (×1.55)</option>
+          <option value="1.725">Very active — hard exercise 6–7 days/week (×1.725)</option>
+          <option value="1.9">Extra active — hard exercise daily + physical job (×1.9)</option>
+        </select>
+      </div>
+    </form>
+
+    <div class="calc-result calc-result-tdee" aria-live="polite">
+      <div class="calc-row">
+        <span class="calc-label">BMR (resting)</span>
+        <span class="calc-value" id="bmr-result">—</span>
+      </div>
+      <div class="calc-row">
+        <span class="calc-label">Maintenance (TDEE)</span>
+        <span class="calc-value" id="tdee-result">—</span>
+      </div>
+      <div class="calc-row">
+        <span class="calc-label">Cut target (−20%)</span>
+        <span class="calc-value" id="cut-result">—</span>
+        <span class="calc-note">≈ 0.5–1 lb/week loss</span>
+      </div>
+      <div class="calc-row">
+        <span class="calc-label">Bulk target (+10%)</span>
+        <span class="calc-value" id="bulk-result">—</span>
+        <span class="calc-note">≈ 0.25–0.5 lb/week gain</span>
+      </div>
+      <p class="calc-result-prompt" id="tdee-prompt">Fill in all fields to see your numbers.</p>
+    </div>
+
+    <div id="sex-note" popover class="info-popover">
+      <p>If you're non-binary or transgender, pick whichever better matches the body composition the formula should model — trans people on HRT often track closer to their post-transition numbers.</p>
+      <button type="button" class="info-popover-close" popovertarget="sex-note" popovertargetaction="hide">Got it</button>
+    </div>
+
+    <div class="calc-disclaimer">
+      <h2>About TDEE</h2>
+      <p>TDEE is a starting estimate, not a prescription. Eat at the maintenance target for two to three weeks and watch what the scale does — adjust from there. Most calorie calculators (this one included) overestimate slightly for sedentary office workers and underestimate slightly for people with physical jobs. Don't treat these numbers as more precise than they are.</p>
+    </div>
+  </section>
+
+  <div class="article-body">
+    {{ .Content }}
+  </div>
+</article>
+{{ end }}
+
+{{ define "extraScripts" }}
+  {{- $tdee := resources.Get "js/tdee.js" | resources.Minify | resources.Fingerprint -}}
+  <script src="{{ $tdee.RelPermalink }}" integrity="{{ $tdee.Data.Integrity }}" defer></script>
+{{ end }}
