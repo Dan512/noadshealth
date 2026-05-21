@@ -236,6 +236,12 @@ button { font: inherit; cursor: pointer; }
   color: var(--text-muted);
   letter-spacing: 0;
 }
+.card-cta {
+  display: inline-block;
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: var(--accent);
+}
 
 /* Page header (list / about / privacy) */
 .page-header {

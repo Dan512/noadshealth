@@ -1,7 +1,7 @@
 {{ define "main" }}
 <section class="hero">
-  <h1 class="hero-title">Honest fitness and health tips.</h1>
-  <p class="hero-tag">No ads. No tracking. No autoplay. Just clear, practical advice for getting and staying in shape.</p>
+  <h1 class="hero-title">Honest fitness advice without the usual web junk.</h1>
+  <p class="hero-tag">Beginner-friendly workouts, running plans, nutrition basics, and simple tools. No ads, no tracking, no popups.</p>
 </section>
 
 <section class="recent-articles">
@@ -21,7 +21,16 @@
 
 <section class="calculators-promo">
   <h2 class="section-h">Calculators</h2>
-  <p>Simple tools that run entirely in your browser. No data ever leaves your device.</p>
-  <p><a href="{{ "/calculators/" | relURL }}" class="cta-link">See all calculators &rarr;</a></p>
+  <ul class="card-grid">
+    {{ range first 3 (where .Site.RegularPages "Section" "calculators") }}
+    <li class="card">
+      <a href="{{ .Permalink }}" class="card-link">
+        <h3 class="card-title">{{ .Title }}</h3>
+        <p class="card-desc">{{ .Description | default .Summary | truncate 140 }}</p>
+        <span class="card-cta">Use {{ replace .Title " Calculator" "" }} calculator &rarr;</span>
+      </a>
+    </li>
+    {{ end }}
+  </ul>
 </section>
 {{ end }}

@@ -1,11 +1,11 @@
 <footer class="site-footer">
   <div class="container footer-inner">
     <div class="footer-privacy">
-      <h2 class="footer-h">What this site shares</h2>
+      <h2 class="footer-h">No ads. No tracking.</h2>
       <p>
         NoAdsHealth does not track visitors, serve ads, set cookies, or load third-party scripts.
-        External services are disclosed on the <a href="{{ "/privacy/" | relURL }}">privacy page</a>
-        and are only contacted when you actively choose to visit them.
+        External services are listed on the <a href="{{ "/privacy/" | relURL }}">privacy page</a>
+        and are only contacted when you choose to visit them.
       </p>
     </div>
     <nav class="footer-nav" aria-label="Footer">
@@ -15,6 +15,9 @@
       <a href="{{ "/privacy/" | relURL }}">Privacy</a>
       <a href="{{ "/index.xml" | relURL }}">RSS</a>
     </nav>
-    <p class="footer-meta">&copy; {{ now.Year }} {{ .Site.Params.author }}. Part of the NoAdsDude family.</p>
+    <p class="footer-meta">
+      &copy; {{ now.Year }} NoAdsDude. Run by Dan E., the No Ads Dude.
+      <a href="https://github.com/dan512/noadshealth" rel="noopener">See Source</a>.
+    </p>
   </div>
 </footer>
