@@ -22,7 +22,7 @@ Do this each session.
 
 ### Squat: bodyweight squat
 
-Do 3 sets of 10–15 reps.
+Do 3 sets of 10-15 reps.
 
 Stand with your feet about shoulder-width apart and your toes turned out slightly. Sit down and back, keep your chest tall, and let your knees track over your toes.
 
@@ -30,7 +30,7 @@ If your heels come off the floor, widen your stance or prop your heels on a fold
 
 ### Hinge: glute bridge
 
-Do 3 sets of 12–15 reps.
+Do 3 sets of 12-15 reps.
 
 Lie on your back with your feet flat and knees bent. Drive through your heels and squeeze your glutes at the top.
 
@@ -38,7 +38,7 @@ Stop when your hips line up with your knees and shoulders. Do not turn it into a
 
 ### Push: incline or flat push-up
 
-Do 3 sets of 8–12 reps.
+Do 3 sets of 8-12 reps.
 
 If floor push-ups are too hard, put your hands on a counter, desk, or sturdy chair. An incline push-up is usually the better beginner version because it lets you keep clean form instead of grinding through ugly reps.
 
@@ -46,7 +46,7 @@ Keep your body in a straight line, elbows around 45 degrees from your sides, and
 
 ### Pull: door-frame row
 
-Do 3 sets of 8–12 reps.
+Do 3 sets of 8-12 reps.
 
 Grip both sides of a sturdy door frame, lean back, and row your chest toward the frame. The farther you lean back, the harder it gets.
 
@@ -54,7 +54,7 @@ This is the awkward part of no-equipment training. Pulling is harder to train at
 
 ### Core: dead bug
 
-Do 3 sets of 6–8 reps per side.
+Do 3 sets of 6-8 reps per side.
 
 Lie on your back with your arms pointed at the ceiling and your knees bent over your hips. Press your lower back into the floor, then slowly lower one arm and the opposite leg.
 

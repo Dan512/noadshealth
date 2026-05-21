@@ -279,6 +279,16 @@ button { font: inherit; cursor: pointer; }
   gap: var(--space-3);
   align-items: center;
 }
+.article-byline a {
+  color: inherit;
+  text-decoration: underline;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 2px;
+}
+.article-byline a:hover,
+.article-byline a:focus-visible {
+  color: var(--accent);
+}
 .article-tags { display: inline-flex; gap: var(--space-2); }
 .tag {
   font-size: 0.75rem;
