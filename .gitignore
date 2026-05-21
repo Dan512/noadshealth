@@ -4,6 +4,7 @@
 /article2.md
 /deploy.md
 /article1.md
+hugo/docs/
 
 # Claude Code state, skills, and project config
 .claude/
