@@ -1,0 +1,17 @@
+{{ define "main" }}
+<section class="not-found">
+  <h1 class="article-title">Page not found.</h1>
+  <p class="article-lede">
+    Maybe an old link, maybe a typo, maybe a draft that didn't survive an edit pass.
+    Either way, this one isn't here.
+  </p>
+
+  <p>Try one of these instead:</p>
+  <ul class="not-found-list">
+    <li><a href="{{ "/" | relURL }}">Home</a></li>
+    <li><a href="{{ "/articles/" | relURL }}">Articles</a></li>
+    <li><a href="{{ "/calculators/" | relURL }}">Calculators</a></li>
+    <li><a href="{{ "/about/" | relURL }}">About</a></li>
+  </ul>
+</section>
+{{ end }}
