@@ -173,6 +173,10 @@ button { font: inherit; cursor: pointer; }
 .recent-articles, .calculators-promo {
   margin-bottom: var(--space-8);
 }
+/* Tighten the final section so there's no extra gap before the footer */
+.main > *:last-child {
+  margin-bottom: 0;
+}
 .cta-link {
   display: inline-block;
   color: var(--link);
@@ -736,7 +740,7 @@ a.tag:focus-visible {
   border-top: 1px solid var(--border);
   background: var(--bg-sunken);
   padding: var(--space-7) 0 var(--space-8);
-  margin-top: var(--space-8);
+  margin-top: var(--space-6);
 }
 .footer-inner { max-width: var(--max-w); margin: 0 auto; }
 .footer-h {
