@@ -1,18 +1,22 @@
 ---
-
 title: "Couch to 5K plan: a simple 8-week beginner running schedule"
 description: "A simple 8-week run/walk plan that gets you from zero running to 30 minutes continuous, with pacing advice and injury caveats."
 date: 2026-05-20
+author: "Dan E."
 tags: ["training", "beginners", "running"]
-------------------------------------------
+---
 
 If you are starting from zero, the main thing that derails you is not lack of effort. It is running too hard too soon, getting sore or beat up, and falling off by week three. This plan keeps things simple: three runs per week, built around run/walk intervals that gradually turn into continuous running.
+
+One quick note before you start: running is higher-impact than walking or bodyweight work, so if you have a known heart, metabolic, joint, or weight-related concern, talk to your doctor before starting. The [CDC's adult activity guidance](https://www.cdc.gov/physical-activity-basics/adding-adults/index.html) covers when medical input matters.
 
 ## How the plan works
 
 Run three days per week with at least one rest day between sessions. Monday, Wednesday, Friday works well. Tuesday, Thursday, Saturday works too.
 
-Each week uses the same three sessions. The running intervals get longer over time, the walk breaks get shorter, and by week 8 you are running 28 to 30 minutes straight. For most beginners, that puts you around 5K at an easy pace.
+Each week uses the same three sessions. The running intervals get longer over time, the walk breaks get shorter, and by week 8 you are running 28 to 30 minutes straight. For most beginners, that puts you in the 4-5K range at an easy pace.
+
+This is a compressed version of the canonical [NHS Couch to 5K](https://www.nhs.uk/live-well/exercise/running-and-aerobic-exercises/get-running-with-couch-to-5k/) plan, which runs 9 weeks with more gradual jumps. If this version ever feels too aggressive, the NHS schedule is a great fallback.
 
 ## The 8-week schedule
 
@@ -20,17 +24,17 @@ Use a 5-minute brisk walk before every session and a 5-minute easy walk after.
 
 | Week | Main set                                           |
 | ---- | -------------------------------------------------- |
-| 1–2  | Alternate 1 min running / 2 min walking for 20 min |
-| 3–4  | Alternate 2 min running / 1 min walking for 22 min |
-| 5–6  | Alternate 5 min running / 1 min walking for 24 min |
-| 7    | Run 20–25 min continuous                           |
-| 8    | Run 28–30 min continuous                           |
+| 1-2  | Alternate 1 min running / 2 min walking for 20 min |
+| 3-4  | Alternate 2 min running / 1 min walking for 22 min |
+| 5-6  | Alternate 5 min running / 1 min walking for 24 min |
+| 7    | Run 20-25 min continuous                           |
+| 8    | Run 28-30 min continuous                           |
 
 If week 7 feels rough, take one or two short walk breaks. That does not mean the plan failed. It means you used the progression the way it was supposed to be used.
 
 ## How fast should you run?
 
-Slower than you think. Your running pace should be easy enough that you could say a short sentence without gasping. If you cannot get five or six words out, slow down.
+Slower than you think. Your running pace should be easy enough that you could say a short sentence without gasping. If you cannot get five or six words out, slow down. This is the same [talk test](https://www.cdc.gov/physical-activity-basics/measuring/index.html) public-health agencies use to define moderate intensity.
 
 Most beginners run their easy efforts around RPE 7 or 8 (Rate of Perceived Exertion on a scale of 0-10) when they should be closer to RPE 4 or 5. It feels almost too slow at first. That is correct.
 
@@ -38,7 +42,7 @@ The point of this plan is not to test your toughness. It is to build enough aero
 
 ## What to watch out for
 
-The most common mistake is skipping the walk breaks in weeks 1 through 3 because they feel too easy. Do not do that. Your lungs might be ready before your shins, calves, knees, and feet are. Muscles adapt faster than tendons and connective tissue, and that gap is where a lot of beginner injuries start.
+The most common mistake is skipping the walk breaks in weeks 1 through 3 because they feel too easy. Do not do that. Your lungs might be ready before your shins, calves, knees, and feet are. Muscles adapt faster than tendons and connective tissue, and bone is slower still — [orthopedic sports medicine sources](https://www.howardluksmd.com/training-error-tendinopathy-and-overuse-in-runners/) put bone adaptation on a timescale of months, not weeks. That gap is where a lot of beginner injuries start.
 
 Shin splints and knee discomfort are the usual trouble spots. If your shins start to hurt, drop back one week and use softer surfaces when you can. If knee pain sticks around between sessions instead of settling down, stop trying to push through it and get it looked at.
 

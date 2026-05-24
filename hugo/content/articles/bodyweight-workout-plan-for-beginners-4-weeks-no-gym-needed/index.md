@@ -1,5 +1,5 @@
 ---
-
+author: "Dan E."
 title: "Bodyweight workout plan for beginners: 4 weeks, no gym needed"
 description: "A simple 4-week bodyweight plan with specific exercises, sets, reps, and progressions you can do at home without equipment."
 date: 2026-05-20
@@ -8,11 +8,13 @@ tags: ["training", "beginners", "bodyweight"]
 
 If you want to start training at home, do not make the plan complicated. You need a few repeatable movements, enough work to build the habit, and a clear way to make it harder when the easy version stops doing much.
 
+Quick note before you start: bodyweight training is the lowest-impact way to start, but if you have a known heart, metabolic, or joint condition, talk to your doctor first. The [CDC's adult activity guidance](https://www.cdc.gov/physical-activity-basics/adding-adults/index.html) explains when medical input matters.
+
 ## What the 4-week plan looks like
 
 Train three days per week. Monday, Wednesday, Friday works. Tuesday, Thursday, Saturday works too. The exact days matter less than leaving at least one rest day between sessions.
 
-Each workout uses the same five patterns: squat, hinge, push, pull, and core. You keep the structure the same for four weeks. What changes is the volume and difficulty.
+Each workout uses the same five patterns: squat, hinge, push, pull, and core. You keep the structure the same for four weeks. What changes is the volume and difficulty. This lines up with [Mayo Clinic's guidance on strength training](https://www.mayoclinic.org/healthy-lifestyle/fitness/in-depth/strength-training/art-20046670), which recommends working all major muscle groups at least twice a week and progressing once the current load gets easy.
 
 {{< image src="proper-bodyweight-squat-form.webp" alt="A man performing a bodyweight squat" caption="Bodyweight squat" >}}
 
